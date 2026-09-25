@@ -1,6 +1,8 @@
+
 import requests
 import json
 from pathlib import Path
+from datatime import datatime
 
 API_URL = "https://jsonplaceholder.typicode.com/users"
 
@@ -10,6 +12,7 @@ OUTPUT_DIR.mkdir(exist_ok=True)
 OUTPUT_FILE = OUTPUT_DIR / "users.json"
 
 print("Starting API data extraction...")
+print(f"Extraction time: {datetime.now()}")
 print(f"API URL: {API_URL}")
 
 response = requests.get(API_URL, timeout=30)
