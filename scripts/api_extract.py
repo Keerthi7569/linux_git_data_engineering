@@ -1,8 +1,7 @@
-
 import requests
 import json
 from pathlib import Path
-from datatime import datatime
+from datetime import datetime
 
 API_URL = "https://jsonplaceholder.typicode.com/users"
 
@@ -27,5 +26,5 @@ if response.status_code == 200:
     print(f"Data saved to: {OUTPUT_FILE}")
 
 else:
-    print(f"API request failed.")
+    print("API request failed.")
     print(f"Status code: {response.status_code}")
