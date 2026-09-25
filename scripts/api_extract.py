@@ -1,6 +1,7 @@
 import requests
 import json
 from pathlib import Path
+from datetime import datetime
 
 API_URL = "https://jsonplaceholder.typicode.com/users"
 
@@ -10,6 +11,7 @@ OUTPUT_DIR.mkdir(exist_ok=True)
 OUTPUT_FILE = OUTPUT_DIR / "users.json"
 
 print("Starting API data extraction...")
+print(f"Extraction time: {datetime.now()}")
 print(f"API URL: {API_URL}")
 
 response = requests.get(API_URL, timeout=30)
@@ -24,5 +26,5 @@ if response.status_code == 200:
     print(f"Data saved to: {OUTPUT_FILE}")
 
 else:
-    print(f"API request failed.")
+    print("API request failed.")
     print(f"Status code: {response.status_code}")
