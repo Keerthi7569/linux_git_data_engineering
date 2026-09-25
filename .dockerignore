@@ -1,0 +1,5 @@
+venv/
+.git/
+logs/
+landing_zone/
+__pycache__/
